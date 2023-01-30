@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './component/css/style.css'
+import { AuthContext, useAuth } from './component/context/context';
+import UserApp from './user';
 
-function App() {
+// import Vu from './component/container/Vu'
+// import Menu from './component/container/menu';
+// import ButtonMenu from './component/menu/buttonMenu';
+
+type AppContainerProps={
+  children : React.ReactNode
+}
+
+const App =({children} : AppContainerProps)=> {
+  const { currentUser } = useAuth();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthContext.Provider value={currentUser}>
+      <UserApp/>
+    </AuthContext.Provider>
   );
 }
 
