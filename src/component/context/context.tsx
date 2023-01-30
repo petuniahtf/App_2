@@ -1,7 +1,7 @@
 import { createContext, useCallback, useMemo, useState, useEffect, useContext } from 'react'
 import {  onAuthStateChanged,  signInWithEmailAndPassword, signOut,  sendPasswordResetEmail, sendEmailVerification,  } from 'firebase/auth'
 import firebase from 'firebase/app';
-import 'firebase/auth';
+
 //import { setDoc, doc, getDoc, serverTimestamp } from "firebase/firestore";
 
 
